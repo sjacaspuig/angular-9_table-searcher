@@ -1,4 +1,25 @@
-{
+export type person = {
+    "id": number,
+    "name": string,
+    "surname": string,
+    "surname2": string,
+    "sex": string,
+    "country-id": number,
+    "phone": string,
+    "datebirthday": string,
+    "lastModification": string,
+};
+
+export type infoPopulation = {
+    "person": person[],
+};
+
+
+export type populations = {
+    "population": infoPopulation,
+};
+
+export const population: populations = {
     "population":{
         "person": [
             {
@@ -221,9 +242,6 @@
                 "datebirthday": "1997-03-10T00:00:00",
                 "lastModification": "2000-02-05T09:00:00"
             }                     
-                
-            
          ]
     }
-
-}
+};
