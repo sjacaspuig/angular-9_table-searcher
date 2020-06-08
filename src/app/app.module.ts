@@ -8,6 +8,7 @@ import { HeaderModule } from './components/header/header.module';
 import { SearcherModule } from './components/searcher/searcher.module';
 import { TableModule } from './components/table/table.module';
 import { FooterModule } from './components/footer/footer.module';
+import { ApiService } from './services/api/api.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FooterModule } from './components/footer/footer.module';
     TableModule,
     FooterModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
