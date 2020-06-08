@@ -6,6 +6,7 @@ import { TableComponent } from './table.component';
   imports: [
     CommonModule
   ],
-  declarations: [TableComponent]
+  declarations: [TableComponent],
+  exports: [TableComponent],
 })
 export class TableModule { }

@@ -6,6 +6,7 @@ import { SearcherComponent } from './searcher.component';
   imports: [
     CommonModule
   ],
-  declarations: [SearcherComponent]
+  declarations: [SearcherComponent],
+  exports: [SearcherComponent],
 })
 export class SearcherModule { }
