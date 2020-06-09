@@ -1,4 +1,11 @@
 <app-header></app-header>
-<app-searcher></app-searcher>
-<app-table></app-table>
+<app-searcher [(searchModel)]="searchModel"></app-searcher>
+
+<!-- 
+    La paginación completa se consigue clicando en la primera página o en la última,
+    las cuales siempre están presentes
+-->
+
+<app-table [dataList]="persons | listFilter: searchModel"></app-table>
 <app-footer></app-footer>
+

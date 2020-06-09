@@ -3,8 +3,6 @@ import { ApiService } from './services/api/api.service';
 import { person } from './assets/info-population';
 import { sex, language, country } from './assets/datasource';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +13,7 @@ export class AppComponent implements OnInit {
   sexs: sex[];
   languages: language[];
   countries: country[];
+  searchModel: any;
 
   constructor(private api: ApiService) {}
 

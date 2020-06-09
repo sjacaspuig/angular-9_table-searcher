@@ -9,10 +9,13 @@ import { SearcherModule } from './components/searcher/searcher.module';
 import { TableModule } from './components/table/table.module';
 import { FooterModule } from './components/footer/footer.module';
 import { ApiService } from './services/api/api.service';
+import { ListFilterPipe } from './pipes/list-filter-pipe.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListFilterPipe
   ],
   imports: [
     BrowserModule,

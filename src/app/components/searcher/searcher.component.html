@@ -1,3 +1,3 @@
-<p>
-  searcher works!
-</p>
+  <label>Buscador:</label>
+  <input type="text" placeholder="Busca por cualquier dato" [ngModel]="searchModel" (ngModelChange)="updateSearchModel($event)">
+  <button (click)="onSearch()">Buscar</button>
