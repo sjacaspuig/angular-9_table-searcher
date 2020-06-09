@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { person } from 'src/app/assets/info-population';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -19,9 +19,15 @@ export class TableComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     this.itemsPerPageList = [10, 20, 50];
-    this.itemsForm = this.fb.group({
-      itemsControl: this.itemsPerPageList[0]
-    });
+
+
+    this.itemsForm = new FormGroup({
+      'itemsControl': new FormControl(this.itemsPerPageList[0], [
+          Validators.required,
+          Validators.min(10),
+          Validators.max(50)
+    ]),
+  });
 
     this.config = {
       itemsPerPage: this.itemsForm.controls['itemsControl'].value,
