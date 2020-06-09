@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { person } from 'src/app/assets/info-population';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './table.component.html',
   host: { class: 'app-table' },
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, DoCheck {
 
   @Input() dataList: person[];
   config: any;
@@ -28,6 +28,10 @@ export class TableComponent implements OnInit {
       currentPage: 1,
       totalItems: this.dataList.length,
     };
+  }
+
+  ngDoCheck() {
+    this.config.totalItems = this.dataList.length;
   }
 
   pageChanged(event): void{

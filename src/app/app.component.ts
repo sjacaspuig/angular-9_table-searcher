@@ -10,9 +10,6 @@ import { sex, language, country } from './assets/datasource';
 export class AppComponent implements OnInit {
 
   persons: person[];
-  sexs: sex[];
-  languages: language[];
-  countries: country[];
   searchModel: any;
 
   constructor(private api: ApiService) {}
@@ -23,9 +20,6 @@ export class AppComponent implements OnInit {
 
   init() {
     this.persons = this.api.getPopulation().population.person;
-    this.sexs = this.api.getSource().data.sex;
-    this.languages = this.api.getSource().data.language;
-    this.countries = this.api.getSource().data.country;
   }
 
  }

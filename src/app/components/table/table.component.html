@@ -12,11 +12,19 @@
     <thead>
       <tr>
         <th scope="col">Nombre completo</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Fecha de nacimiento</th>
+        <th scope="col">Teléfono de contacto</th>
+        <th scope="col">Última modificación</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of dataList | paginate: config">
         <td>{{item.surname2}} {{item.surname}}, {{item.name}}</td>
+        <td>{{item.sex}}</td>
+        <td>{{item.datebirthday}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.lastModification}}</td>
       </tr>
     </tbody>
   </table>
