@@ -20,7 +20,7 @@ export class ApiService {
     population.population.person.forEach(item => {
       item.datebirthday = moment(item.datebirthday).format('YYYY-MM-DD');
       item.lastModification = moment(item.lastModification).format('YYYY-MM-DD HH:mm');
-      const prefix: country[] = source.data.country.filter((country: country) => country.id === item["country-id"]);
+      const prefix: country[] = source.data.country.filter((c: country) => c.id === item['country-id']);
       item.phone = '+' + prefix[0].prefix + ' ' + item.phone;
     });
 
@@ -28,4 +28,4 @@ export class ApiService {
 
     return population;
   }
-} 
+}

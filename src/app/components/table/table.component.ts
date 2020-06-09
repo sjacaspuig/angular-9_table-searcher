@@ -1,13 +1,14 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, HostBinding } from '@angular/core';
 import { person } from 'src/app/assets/info-population';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  host: { class: 'app-table' },
 })
 export class TableComponent implements OnInit, DoCheck {
+
+  @HostBinding('class.app-table') appTable  = true;
 
   @Input() dataList: person[];
   config: any;
@@ -22,7 +23,7 @@ export class TableComponent implements OnInit, DoCheck {
 
 
     this.itemsForm = new FormGroup({
-      'itemsControl': new FormControl(this.itemsPerPageList[0], [
+      itemsControl: new FormControl(this.itemsPerPageList[0], [
           Validators.required,
           Validators.min(10),
           Validators.max(50)
@@ -30,7 +31,7 @@ export class TableComponent implements OnInit, DoCheck {
   });
 
     this.config = {
-      itemsPerPage: this.itemsForm.controls['itemsControl'].value,
+      itemsPerPage: this.itemsForm.controls.itemsControl.value,
       currentPage: 1,
       totalItems: this.dataList.length,
     };
@@ -45,7 +46,7 @@ export class TableComponent implements OnInit, DoCheck {
   }
 
   onChangeSelect(): void {
-    this.config.itemsPerPage = this.itemsForm.controls['itemsControl'].value;
+    this.config.itemsPerPage = this.itemsForm.controls.itemsControl.value;
   }
 
 }

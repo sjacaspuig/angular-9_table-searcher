@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  host: { class: 'app-header' },
 })
 export class HeaderComponent implements OnInit {
+
+  @HostBinding('class.app-header') appHeader  = true;
 
   constructor() { }
 

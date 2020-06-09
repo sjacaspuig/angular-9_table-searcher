@@ -1,11 +1,12 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-searcher',
   templateUrl: './searcher.component.html',
-  host: { class: 'app-searcher' },
 })
 export class SearcherComponent implements OnInit {
+
+  @HostBinding('class.app-searcher') appSearcher  = true;
 
   @Input() searchModel;
 

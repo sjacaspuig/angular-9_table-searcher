@@ -32,24 +32,24 @@ describe('TableComponent', () => {
   });
 
   it(`form should be invalid`, async(() => {
-    component.itemsForm.controls['itemsControl'].setValue(0);
+    component.itemsForm.controls.itemsControl.setValue(0);
     expect(component.itemsForm.valid).toBeFalsy();
   }));
   it(`form should be invalid`, async(() => {
-    component.itemsForm.controls['itemsControl'].setValue(60);
+    component.itemsForm.controls.itemsControl.setValue(60);
     expect(component.itemsForm.valid).toBeFalsy();
   }));
 
   it(`form should be valid`, async(() => {
-    component.itemsForm.controls['itemsControl'].setValue(10);
+    component.itemsForm.controls.itemsControl.setValue(10);
     expect(component.itemsForm.valid).toBeTruthy();
   }));
   it(`form should be valid`, async(() => {
-    component.itemsForm.controls['itemsControl'].setValue(20);
+    component.itemsForm.controls.itemsControl.setValue(20);
     expect(component.itemsForm.valid).toBeTruthy();
   }));
   it(`form should be valid`, async(() => {
-    component.itemsForm.controls['itemsControl'].setValue(50);
+    component.itemsForm.controls.itemsControl.setValue(50);
     expect(component.itemsForm.valid).toBeTruthy();
   }));
 });
