@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, DoCheck, HostBinding } from '@angular/core';
-import { person } from 'src/app/assets/info-population';
+import { Person } from 'src/app/models/populations';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ export class TableComponent implements OnInit, DoCheck {
 
   @HostBinding('class.app-table') appTable  = true;
 
-  @Input() dataList: person[];
+  @Input() dataList: Person[];
   config: any;
   itemsPerPageList: number[];
   itemsForm: FormGroup;

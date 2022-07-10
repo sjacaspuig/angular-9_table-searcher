@@ -1,33 +1,6 @@
-export type sex = {
-    id: number,
-    key: string,
-    description: string,
-};
+import { Sources } from "../models/sources";
 
-export type language = {
-    id: number,
-    key: string,
-    description: string,
-};
-
-export type country = {
-    id: number,
-    description: string,
-    prefix: number,
-    language: string,
-};
-
-export type dataSource = {
-    sex: sex[],
-    language: language[],
-    country: country[],
-};
-
-export type sources = {
-    data: dataSource,
-};
-
-export const source: sources = {
+export const SOURCE: Sources = {
     data: {
         sex: [
             {

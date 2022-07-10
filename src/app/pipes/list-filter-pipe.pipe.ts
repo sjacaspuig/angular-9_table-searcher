@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { person } from '../assets/info-population';
+import { Person } from '../models/populations';
 
 @Pipe({
   name: 'listFilter'
 })
 export class ListFilterPipe implements PipeTransform {
 
-  transform(list: person[], filterText: string): any {
+  transform(list: Person[], filterText: string): any {
     return list ?
-      list.filter((item: person) =>
+      list.filter((item: Person) =>
         item.name.search(new RegExp(filterText, 'i')) > -1 ||
         item.surname.search(new RegExp(filterText, 'i')) > -1 ||
         item.surname2.search(new RegExp(filterText, 'i')) > -1 ||
