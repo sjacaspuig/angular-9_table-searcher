@@ -1,4 +1,8 @@
-# PaintPaint
+# Table searcher
+
+This project simulates a software to know the registered employees in a company.
+The table lists all the registered employees showing their main data, in addition, it incorporates a pager to improve performance in terms of loading.
+The table also includes a search engine to make it easier for the user to find any employee.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
