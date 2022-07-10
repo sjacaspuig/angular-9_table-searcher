@@ -1,25 +1,6 @@
-export type person = {
-    id: number,
-    name: string,
-    surname: string,
-    surname2: string,
-    sex: string,
-    'country-id': number,
-    phone: string,
-    datebirthday: string,
-    lastModification: string,
-};
+import { Populations } from "../models/populations";
 
-export type infoPopulation = {
-    person: person[],
-};
-
-
-export type populations = {
-    population: infoPopulation,
-};
-
-export const population: populations = {
+export const POPULATION: Populations = {
     population: {
         person: [
             {
